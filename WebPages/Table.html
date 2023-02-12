@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Marks</title>
+  
+</head>
+<style>
+    body{
+ background-color: white;
+    }
+table{
+  border:1px solid rgb(16, 13, 13); 
+  color: rgb(12, 13, 13);
+  width: 60%;
+}
+th,td{
+    border:1px solid rgb(16, 13, 13);
+    
+color: rgb(12, 13, 13);
+}
+.center {
+  margin-left: 20%;
+ 
+  margin-top: 20px;
+}
+#btnExport{
+    padding: 5px;
+    margin-top: 30px;
+    margin-left: 45.5%;
+    border-radius: 5px;
+
+}
+#t1{
+    background-color: white;
+    color: rgb(9, 10, 11);
+    width: 300px;
+    padding: 2px;
+}
+#t2{
+    background-color: white;
+    color: rgb(9, 10, 11);
+    width: 300px;
+}
+#t3{
+    background-color: white;
+    color: rgb(9, 10, 11);
+    width: 300px;
+}
+#t4{
+    background-color: white;
+    color: rgb(9, 10, 11);
+    width: 300px;
+}
+#t5{
+    background-color: white;
+    color: rgb(9, 10, 11);
+    width: 300px;
+}
+td{
+    text-align: center;
+}
+#btn{
+    padding: 5px;
+    margin-top: 30px;
+    margin-left: 47%;
+    border-radius: 5px;
+}
+#butn{
+    padding: 5px;
+    margin-left:90%;
+    border-radius: 5px;
+    border:1px solid rgb(16, 13, 13); 
+}
+
+#col{
+    width: 30%;
+}
+.centr {
+  margin-left: 35%;
+    
+  margin-top: 10px;
+}
+
+</style>
+
+
+<body>
+    <a id="butn" href="LoginPage.html"><b>Log Out</b></a>
+    <img src="./bitlogo.png" class="centr">
+   <form method="POST">
+   <table action="" class="center" id="example"><tr><th colspan="10" >Here is the deltails of the Student of CSE Branch of III SEM. For the Subject:</th></tr>
+    
+        <tr>
+            <th id="col" rowspan="1">ROLL NO.</th>
+            <th rowspan="1" >NAME</th>
+            <th colspan="3">OPERATING SYSTEM               
+                </th>
+                           
+             
+        </tr>
+        
+            </tr>
+        <tr>
+            <td>5173982092901</td>
+            <td>RAHUL</td>
+            <td id="t1">
+            <input type="number" id="t1" name="C_T" placeholder="C_T"  required />
+            <br>
+            <input type="number" id="t2" name="Attendance" placeholder="Attendance"   required />
+            <br>
+            <input type="number" id="t3"  name="T_A" placeholder="T_A"   />
+            </td>
+ 
+        </tr>
+        <tr>
+            <td>3425263437343</td>
+            <td>HARISH</td>
+            <td id="t1">
+                <input type="text" id="t1" name="C_T" placeholder="C_T"   required />
+                <br>
+                <input type="text" id="t2" name="Attendance" placeholder="Attendance"   required />
+                <br>
+                <input type="text" id="t4"  name="T_A" placeholder="T_A" />
+                </td>
+         
+                   
+        </tr>
+        <tr>
+            <td>8921470671971</td>
+            <td>BHUMIKA</td>
+            <td id="t1">
+                <input type="text" id="t1" name="C_T" placeholder="C_T"   required />
+                <br>
+                <input type="text" id="t2" name="Attendance" placeholder="Attendance"   required />
+                <br>
+                <input type="text" id="t5"  name="T_A" placeholder="T_A"  />
+                </td>
+         
+                     
+        </tr>
+        
+        
+    </table>
+    <input type="submit" id="btn" value="Save" />
+    </form>
+   
+    
+    
+    <input type="button" id="btnExport" value="Generate PDF" onclick="Export()" />
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript">
+       
+        function Export() {
+            html2canvas(document.getElementById('example'), {
+                onrendered: function (canvas) {
+                    var data = canvas.toDataURL();
+                    var docDefinition = {
+                        content: [{
+                            image: data,
+                            width: 400
+                            
+                        }]
+                    };
+                    pdfMake.createPdf(docDefinition).download("Result.pdf");
+                }
+            });
+        }
+    </script>
+     
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <title>Welcome Teacher</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Teacher</title>
+    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="Checkbox.css">
+    <script src="FrontPage.js"></script>
+    
+   
+</head>
+<body>
+    <a id="butn" href="./LoginPage.html"><b>Log Out</b></a>
+  <div>
+
+      
+      <img src="bit7.png" class="bit">
+      <h1 class="name">Welcome to Internal Grade Assesment </h1>
+<hr>
+</div>
+<div class="rightpanel" >
+
+
+  <form><div class="multipleSelection">
+    <div class="selectBoxs" , onclick="Showcheckboxe()">
+        <select>
+            <option><b>Select Branch</b></option>
+        </select>
+        <div class="overSelect"></div>
+    </div>
+      <div id="checkBoxe">
+            <label for="first">
+              <input type="checkbox" id="first"  />
+                   COMPUTER SCIENCE<br>
+            </label>
+                
+                    <label for="second">
+              <input type="checkbox" id="second" />
+              ELECTRICAL AND ELECTRONICS<br>
+        
+                       </label>
+          
+                         </label>
+
+                <label for="second">
+                <input type="checkbox" id="second" />
+                    ELECTRONICS AND TELECOMMUNICATION<br>
+                      
+                    </label>
+            
+              <label for="second">
+                <input type="checkbox" id="third" />
+                   INFORMATION TECHNOLOGY<br>
+                                  
+                     </label>
+              <label for="second">
+                <input type="checkbox" id="fourth" />
+                    ELECTRICAL ENGINEERING<br>
+                                              
+                 </label>                         
+    
+       </label>
+       </div>
+       </div>
+       </form>
+<form >
+  <div class="multipleSelection">
+      <div class="selectBox"
+          onclick="Showcheckboxes()">
+          <select>
+              <option style="font-family:Garamond"><b>Select Semester</b></option>
+          </select>
+          <div class="OverSelect"></div>
+      </div>
+      <div id="checkBoxes">
+          <label for="first1">
+              <input type="checkbox" id="first1"  />
+              I Sem.<br>
+
+          </label>         
+          
+          <label for="second2">
+              <input type="checkbox" id="second2" />
+              II Sem.<br>
+              
+          </label>
+          
+          <label for="third3">
+              <input type="checkbox" id="third3" />
+              III Sem.<br>
+
+          </label>
+          
+          <label for="fourth4">
+              <input type="checkbox" id="fourth4" />
+              IV Sem.<br>
+
+          </label>
+          
+        </div>
+  </div>
+  </form>
+  <form >
+    <div class="multipleSelection">
+        <div class="SelectBox"
+            onclick="ShowcheckBoxes()">
+            <select>
+                <option style="font-family:Garamond"><b>Select Subject</b></option>
+            </select>
+            <div class="overSelects"></div>
+        </div>
+        <div id="CheckBoxes">
+            <label for="first11">
+                <input type="checkbox" id="CS01"  />
+                Operating System<br>
+  
+            </label>         
+            <label for="fourth44">
+                <input type="checkbox" id="CS01" />
+                Python with Django<br>
+  
+            </label>
+            <label for="second22">
+                <input type="checkbox" id="CS02" />
+                Digital Electronics Lab <br>
+                
+            </label>
+            
+            <label for="third33">
+                <input type="checkbox" id="CS03" />
+                Mini Project-I / IDEA Lab<br>
+  
+            </label>
+            
+            
+            
+          </div>
+    </div>
+    </form>   
+
+<script>
+    function check(){
+    if (document.getElementById('first').checked && document.getElementById('third3').checked  && document.getElementById('CS03').checked== true ) {
+         window.location.assign('./MiniTable.html')
+    }
+   else if (document.getElementById('first').checked && document.getElementById('third3').checked  && document.getElementById('CS01').checked== true ){
+        window.location.assign('./Table.html')
+    }
+}
+
+</script>
+          
+       
+<div class="button-form">
+    <a id="submit" onclick="check()"><b>Search</b></a></div>
+
+</body>
+</html>

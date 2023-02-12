@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insert Marks</title>
+    <script src="API.js"></script>
+</head>
+<style>
+    body{
+ background-color: white;
+    }
+table, th, td {
+  border:1px solid rgb(16, 13, 13);
+  align-self: center;
+  width: 50%;
+  color: rgb(12, 13, 13);
+}
+.center {
+  margin-left: 24%;
+    
+  margin-top: 20px;
+}
+.centr {
+  margin-left: 35%;
+    
+  margin-top: 10px;
+}
+#btnExport{
+    padding: 5px;
+    margin-top: 30px;
+    margin-left: 45%;
+    border-radius: 5px;
+
+}
+#t1{
+    background-color: white;
+    color: rgb(9, 10, 11);
+    width: 300px;
+}
+#t2{
+    background-color: white;
+    color: rgb(9, 10, 11);
+    width: 300px;
+}
+#t3{
+    background-color: white;
+    color: rgb(9, 10, 11);
+    width: 300px;
+}
+#t4{
+    background-color: white;
+    color: rgb(9, 10, 11);
+    width: 300px;
+}
+td{
+    text-align: center;
+}
+#btn{
+    padding: 5px;
+    margin-top: 30px;
+    margin-left: 47%;
+    border-radius: 5px;
+}
+#butn{
+    padding: 5px;
+    margin-left:90%;
+    border-radius: 5px;
+    border:1px solid rgb(16, 13, 13); 
+    }
+</style>
+<script>
+    function cal(value){
+        var x;
+        x=.3*value;       
+        document.getElementById('t2').value=x;
+        
+    }
+    function cal1(value){
+        var t;
+        t=.3*value;    
+        document.getElementById('t3').value=t;
+        
+
+    }function cal2(value){
+        var z;
+        z=.3*value;
+        document.getElementById('t4').value=z;
+
+    }
+</script>
+
+<body>
+    <a id="butn" href="LoginPage.html"><b>Log Out</b></a>
+    <img src="./bitlogo.png" class="centr">
+   <form method="POST">
+   <table action="" class="center" id="example"><tr><th colspan="10" >Here is the deltails of the Student of CSE Branch of III SEM. For the Subject: </th></tr>
+    
+        <tr>
+            <th rowspan="2">ROLL NO.</th>
+            <th rowspan="2">NAME</th>
+            
+            <th colspan="2">Mini Project                
+              </th>
+        </tr>
+        <tr>
+            
+        
+        <tr>
+            <td></textarea>5173982092901</td>
+            <td>RAHUL</td>
+            <td >
+                <input type="text" id="t1" name="Attendance" placeholder="Attendance" onkeyup="cal(this.value)" required />
+                <br>
+                <input type="text" id="t2"  name="T_A" placeholder="T_A" >
+                </td>
+            
+            
+        </tr>
+        <tr>
+            <td>3425263437343</td>
+            <td>HARISH</td>
+            <td >
+                <input type="text" id="t1" name="Attendance" placeholder="Attendance" onkeyup="cal1(this.value)"  required />
+                <br>
+                <input type="text" id="t3"  name="T_A" placeholder="T_A"  />
+                </td>
+            
+                   
+        </tr>
+        <tr>
+            <td>8921470671971</td>
+            <td>BHUMIKA</td>
+            <td >
+                <input type="text" id="t1" name="Attendance" placeholder="Attendance" onkeyup="cal2(this.value)"  required />
+                <br>
+                <input type="text" id="t4"  name="T_A" placeholder="T_A"  />
+                </td>
+                     
+        </tr>
+        
+        
+    </table>
+    <input type="submit" id="btn" value="Save" />
+    </form>
+    
+    <input type="button" id="btnExport" value="Generate PDF" onclick="Export()" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script type="text/javascript">
+       
+        function Export() {
+            html2canvas(document.getElementById('example'), {
+                onrendered: function (canvas) {
+                    var data = canvas.toDataURL();
+                    var docDefinition = {
+                        content: [{
+                            image: data,
+                            width: 400
+                            
+                        }]
+                    };
+                    pdfMake.createPdf(docDefinition).download("Result.pdf");
+                }
+            });
+        }
+    </script>
+   
+</body>
+</html>
